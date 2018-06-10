@@ -1,1 +1,1 @@
-# Reiter Model
+# Reiter's Model
