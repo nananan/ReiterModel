@@ -14,7 +14,7 @@ public:
     HelperFile() {}
 
     void readFile(float &alpha, float &beta, float &gamma, int &percentual, int &margolus) {
-        ifstream myfile ("value.txt");
+        ifstream myfile ("../Data/model.conf");;
         int cont = 0;
         if (myfile.is_open())
         {
