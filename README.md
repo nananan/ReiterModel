@@ -25,7 +25,7 @@ La vicinanza di un automa cellulare può essere, ad esempio:
 
 ### Modello di Reiter 
 
-Il modello di Reiter è un automa esagonale. Data una tassellazione del piano in celle esagonali, ogni cella $z$ ha sei vicini. Si denota $s_t(z)$ lo stato variabile della cella $z$ al tempo $t$ che fornisce la quantità di acqua immagazzinata in $z$. 
+Il modello di Reiter è un automa esagonale. Data una tassellazione del piano in celle esagonali, ogni cella $z$ ha sei vicini. Si denota <img src="https://latex.codecogs.com/gif.latex?s_t(z)" title="s_t(z)" /> lo stato variabile della cella $z$ al tempo $t$ che fornisce la quantità di acqua immagazzinata in $z$. 
 
 Le celle sono divise in 3 tipi: 
 
