@@ -25,11 +25,11 @@ La vicinanza di un automa cellulare può essere, ad esempio:
 
 ### Modello di Reiter 
 
-Il modello di Reiter è un automa esagonale. Data una tassellazione del piano in celle esagonali, ogni cella $z$ ha sei vicini. Si denota <img src="https://latex.codecogs.com/gif.latex?s_t(z)" title="s_t(z)" /> lo stato variabile della cella $z$ al tempo $t$ che fornisce la quantità di acqua immagazzinata in $z$. 
+Il modello di Reiter è un automa esagonale. Data una tassellazione del piano in celle esagonali, ogni cella <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> ha sei vicini. Si denota <img src="https://latex.codecogs.com/gif.latex?s_t(z)" title="s_t(z)" /> lo stato variabile della cella <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> al tempo <img src="https://latex.codecogs.com/gif.latex?t" title="t" /> che fornisce la quantità di acqua immagazzinata in <img src="https://latex.codecogs.com/gif.latex?z" title="z" />. 
 
 Le celle sono divise in 3 tipi: 
 
-- Una cella $z$ è "frozen" se $s_t(z) \ge 1$. 
+- Una cella <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> è "frozen" se <img src="https://latex.codecogs.com/gif.latex?s_t(z)&space;=&space;1" title="s_t(z) = 1" />. 
 
 - Se una cella non è "frozen" ma almeno un vicino è "frozen", la cella sarà una cella "boundary". 
 - Una cella che non è né "frozen" e nemmeno "boundary" è chiamata "nonreceptive". 
@@ -41,40 +41,39 @@ La condizione iniziale nel modello di Reiter è: 
 
 ![1527968377496](./ImageRelation/initialReiter.png)
 
-In cui $\mathcal{O}$ è la cella di origine e $\beta$ rappresenta una costante fissata del livello di vapore di background. 
+In cui <img src="https://latex.codecogs.com/gif.latex?$\mathcal{O}$" title="$\mathcal{O}$" /> è la cella di origine e <img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> rappresenta una costante fissata del livello di vapore di background. 
 
 Inoltre si deifinisce 
 
-- $u_t(z)$, la quantità di acqua che partecipa nella diffusione 
-- $v_t(z)$, la quantità di acqua che non partecipa nella diffusione 
+- <img src="https://latex.codecogs.com/gif.latex?u_t(z)" title="u_t(z)" />, la quantità di acqua che partecipa nella diffusione 
+- <img src="https://latex.codecogs.com/gif.latex?v_t(z)" title="v_t(z)" />, la quantità di acqua che non partecipa nella diffusione 
 
 Quindi: 
-$$
-s_t(z) =  u_t(z) + v_t(z)
-$$
-E si fissa $v_t(z) = s_t(z)$ se $z$ è "receptive", e $u_t(z) = 0$ se $z$ è "non-receptive". 
 
-Per $\gamma$, $\alpha$ due costanti fissate rappresentanti, rispettivamente, il vapore aggiunto e il coefficiente di diffusione, nel modello di Reiter lo stato della cella si  evolve in funzione degli stati dei suoi vicini più prossimi secondo due  regole di aggiornamento locale che riflettono i modelli matematici  sottostanti: 
+<img src="https://latex.codecogs.com/gif.latex?s_t(z)&space;=&space;u_t(z)&space;&plus;&space;v_t(z)" title="s_t(z) = u_t(z) + v_t(z)" />
 
-- *Costante aggiuntiva*. Per ogni cella "receptive" $z$. 
+E si fissa <img src="https://latex.codecogs.com/gif.latex?v_t(z)&space;=&space;s_t(z)" title="v_t(z) = s_t(z)" /> se <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> è "receptive", e <img src="https://latex.codecogs.com/gif.latex?u_t(z)&space;=&space;0" title="u_t(z) = 0" /> se <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> è "non-receptive". 
 
-  $$
-  v_t^+(z) = v_t^-(z) + \gamma
-  $$
+Per <img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" />, <img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /> due costanti fissate rappresentanti, rispettivamente, il vapore aggiunto e il coefficiente di diffusione, nel modello di Reiter lo stato della cella si  evolve in funzione degli stati dei suoi vicini più prossimi secondo due  regole di aggiornamento locale che riflettono i modelli matematici  sottostanti: 
 
-   *Diffusione*. Per ogni cella z: 						 
-  $$
-  u_t^+(z) = u_t^-(z) + \frac{\alpha}{2} (\overline{u}_t^-(z) - u_t^-(z))
-  $$
+- *Costante aggiuntiva*. Per ogni cella "receptive" <img src="https://latex.codecogs.com/gif.latex?z" title="z" />. 
+    
+    <img src="https://latex.codecogs.com/gif.latex?v_t^&plus;(z)&space;=&space;v_t^-(z)&space;&plus;&space;\gamma" title="v_t^+(z) = v_t^-(z) + \gamma" />
+
+ - *Diffusione*. Per ogni cella z: 	
+ 
+    <img src="https://latex.codecogs.com/gif.latex?u_t^&plus;(z)&space;=&space;u_t^-(z)&space;&plus;&space;\frac{\alpha}{2}&space;(\overline{u}_t^-(z)&space;-&space;u_t^-(z))" title="u_t^+(z) = u_t^-(z) + \frac{\alpha}{2} (\overline{u}_t^-(z) - u_t^-(z))" />
 
 
 
 
-in cui si usa $\pm$ per denotare lo stato della cella prima e dopo che lo step sia completo, mentre $\overline{u}_t^-(z)$ definisce la media di $u_t^-$ per i sei vicini più prossimi della cella $z$.
+in cui si usa <img src="https://latex.codecogs.com/gif.latex?\pm" title="\pm" /> per denotare lo stato della cella prima e dopo che lo step sia completo, mentre <img src="https://latex.codecogs.com/gif.latex?\overline{u}_t^-(z)" title="\overline{u}_t^-(z)" /> definisce la media di <img src="https://latex.codecogs.com/gif.latex?u_t^-" title="u_t^-" /> per i sei vicini più prossimi della cella <img src="https://latex.codecogs.com/gif.latex?z" title="z" /> .
 
-Le celle ai lati sono considerate come "edge cells", in cui il valore è $u_t^+(z) = \beta$. Così, l'acqua è aggiunta al sistema attraverso queste celle nel processo di diffusione.
+Le celle ai lati sono considerate come "edge cells", in cui il valore è <img src="https://latex.codecogs.com/gif.latex?u_t^&plus;(z)&space;=&space;\beta" title="u_t^+(z) = \beta" />. Così, l'acqua è aggiunta al sistema attraverso queste celle nel processo di diffusione.
 
 Conbinando le due variabili, si ottiene: 
-$$
-s_{t+1}(z) = u_t^+(z) + v_t^+(z)
-$$
+<img src="https://latex.codecogs.com/gif.latex?s_{t&plus;1}(z)&space;=&space;u_t^&plus;(z)&space;&plus;&space;v_t^&plus;(z)" title="s_{t+1}(z) = u_t^+(z) + v_t^+(z)" />
+
+
+Fonte: 
+<a href="https://arxiv.org/pdf/1505.02042.pdf" target="_blank">Interface control and snow crystal growth</a>
